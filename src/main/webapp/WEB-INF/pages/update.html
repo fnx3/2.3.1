@@ -6,7 +6,7 @@
 <body>
 <h2> update user </h2>
 <br>
-<form th:method="POST" th:action="@{/edit}">
+<form th:method="POST" th:action="@{/update}">
     <label for="id">Введите id для изменения пользователя</label>
     <input type="number" th:value="${id}" name="id" id="id"/>
     <br><br> <input type="submit" value="Update!">

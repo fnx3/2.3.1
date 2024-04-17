@@ -45,26 +45,24 @@ public class UserController {
         return "redirect:/all";
     }
 
-    @GetMapping("/update")
-    public String updateUseId(Model model, Long id) {
-        model.addAttribute("id", id );
-
-        return "update";
-    }
-
     @GetMapping("/edit")
-    public String editUserGet(Model model, Long id) {
+    public String updateUserGet(Model model, @RequestParam(value="id", required = false) Long id){
         model.addAttribute("user", userService.get(id) );
-
         return "edit";
     }
 
     @PostMapping("/edit")
-    public String editUserPost(@ModelAttribute("user") User user, Long id) {
+    public String updateUserPost(@ModelAttribute User user, /*@RequestParam(value="id", required = false)*/ Long id){
         userService.update(user, id);
-
         return "redirect:/all";
     }
+
+    /*@PostMapping("/edit")
+    public String editUserPost(@ModelAttribute("user") User user) {
+        userService.update(user, user.getId() );
+
+        return "redirect:/all";
+    }*/
 
     @GetMapping("/delete")
     public String deleteGet(Model model, Long id) {
