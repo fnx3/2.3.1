@@ -57,13 +57,6 @@ public class UserController {
         return "redirect:/all";
     }
 
-    /*@PostMapping("/edit")
-    public String editUserPost(@ModelAttribute("user") User user) {
-        userService.update(user, user.getId() );
-
-        return "redirect:/all";
-    }*/
-
     @GetMapping("/delete")
     public String deleteGet(Model model, Long id) {
         model.addAttribute("id", id );
