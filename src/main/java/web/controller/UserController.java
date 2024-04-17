@@ -52,7 +52,7 @@ public class UserController {
     }
 
     @PostMapping("/edit")
-    public String updateUserPost(@ModelAttribute User user, /*@RequestParam(value="id", required = false)*/ Long id){
+    public String updateUserPost(@ModelAttribute User user, @RequestParam(value="id", required = false) Long id){
         userService.update(user, id);
         return "redirect:/all";
     }
