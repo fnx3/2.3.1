@@ -1,0 +1,17 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update user</title>
+</head>
+<body>
+<h2> update user </h2>
+<br>
+<form th:method="POST" th:action="@{/edit}">
+    <label for="id">Введите id для изменения пользователя</label>
+    <input type="number" th:value="${id}" name="id" id="id"/>
+    <br><br> <input type="submit" value="Update!">
+    <br><br>
+    <a href="/">назад</a>
+</form>
+</body>
+</html>
